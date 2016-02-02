@@ -1,0 +1,6 @@
+C:\Users\Licensed user\Desktop\Programming\C# Projects\WildWest\WildWest\bin\Debug\WildWest.exe.config
+C:\Users\Licensed user\Desktop\Programming\C# Projects\WildWest\WildWest\bin\Debug\WildWest.exe
+C:\Users\Licensed user\Desktop\Programming\C# Projects\WildWest\WildWest\bin\Debug\WildWest.pdb
+C:\Users\Licensed user\Desktop\Programming\C# Projects\WildWest\WildWest\obj\Debug\WildWest.csprojResolveAssemblyReference.cache
+C:\Users\Licensed user\Desktop\Programming\C# Projects\WildWest\WildWest\obj\Debug\WildWest.exe
+C:\Users\Licensed user\Desktop\Programming\C# Projects\WildWest\WildWest\obj\Debug\WildWest.pdb
