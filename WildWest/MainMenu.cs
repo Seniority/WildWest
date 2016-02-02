@@ -61,16 +61,16 @@ namespace WildWest
                     case 4: //Shoot
                         if (player.Shoot(range))
                         {
-                            Console.WriteLine("You hit {0}!", opponent.Name);
+                            Console.WriteLine(">> You hit {0}!", opponent.Name);
                             opponent.Health--;
                         }
                         else
                         {
-                            Console.WriteLine("You missed {0}!", opponent.Name);
+                            Console.WriteLine(">> You missed {0}!", opponent.Name);
                         }
                         break;
                     default:
-                        Console.WriteLine("You said {0}. Nothing happens.", choice);
+                        Console.WriteLine(">> You said {0}. Nothing happens.", choice);
                         break;
                 }
 
@@ -80,11 +80,11 @@ namespace WildWest
             }
         }
 
-        public void CheckWinner()
+        public void CheckWinner() //Check to see if someone has died yet
         {
             string answer = "";
 
-            if (opponent.Health <= 0)
+            if (opponent.Health <= 0) //excute this code if opponent dies
             {
                 Console.WriteLine("You win! Would you like to play again? (Y/N) ");
                 answer = Console.ReadLine();
@@ -102,7 +102,7 @@ namespace WildWest
                 }
 
             }
-            else if (player.Health <= 0)
+            else if (player.Health <= 0) //execute this code if player dies
             {
                 Console.Write("You have been defeated! Would you like to play again? (Y/N) ");
                 answer = Console.ReadLine();
@@ -116,7 +116,10 @@ namespace WildWest
                 }
                 else
                 {
-                    Console.WriteLine("Not a valid answer. Closing Application...");
+                    Console.WriteLine();
+                    Console.WriteLine("<< Not a valid answer. Closing Application... >>");
+                    Thread.Sleep(2000);
+                    keepGoing = false;
                 }
             }
         }
@@ -124,11 +127,13 @@ namespace WildWest
         public int DisplayMenu()
         {
             int choice;
+            Console.WriteLine();
+            Console.WriteLine("===============");            
             Console.WriteLine("Stats:");
             Console.WriteLine("  Distance: {0}", range);
             Console.WriteLine("  Bullets: {0}", player.Bullets);
-            Console.WriteLine("  {0}: {1}", player.Name, player.Health);
-            Console.WriteLine("  {0}: {1}", opponent.Name, opponent.Health);
+            Console.WriteLine("  {0}'s Health: {1}", player.Name, player.Health);
+            Console.WriteLine("  {0}'s Health: {1}", opponent.Name, opponent.Health);
             Console.WriteLine();
             Console.WriteLine("1> Reload");
             Console.WriteLine("2> Move closer");
@@ -139,12 +144,12 @@ namespace WildWest
 
             Console.Write("Indicate your choice: ");
             choice = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("==========");
+            Console.WriteLine("===============");
             Console.WriteLine();
             return choice;
         }
 
-        public void RestartGame()
+        public void RestartGame() //reset Duelist properties if player wants to play again
         {
             player.Health = 5;
             player.Bullets = 6;

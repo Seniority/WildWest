@@ -72,7 +72,7 @@ namespace WildWest
 
             if (Bullets <= 0)
             {
-                Console.WriteLine("{0} is out of bullets!", Name);
+                Console.WriteLine(">> {0} is out of bullets!", Name);
             }
             else
             {
