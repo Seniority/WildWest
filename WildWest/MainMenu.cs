@@ -86,6 +86,7 @@ namespace WildWest
 
             if (opponent.Health <= 0) //excute this code if opponent dies
             {
+                Console.WriteLine(">> " + opponent.Name + " has died");
                 Console.WriteLine("You win! Would you like to play again? (Y/N) ");
                 answer = Console.ReadLine();
                 if (answer.ToUpper() == "N" || answer.ToUpper() == "NO")
@@ -104,6 +105,7 @@ namespace WildWest
             }
             else if (player.Health <= 0) //execute this code if player dies
             {
+                Console.WriteLine(">> " + player.Name + " has died");
                 Console.Write("You have been defeated! Would you like to play again? (Y/N) ");
                 answer = Console.ReadLine();
                 if (answer.ToUpper() == "N" || answer.ToUpper() == "NO")
@@ -118,7 +120,7 @@ namespace WildWest
                 {
                     Console.WriteLine();
                     Console.WriteLine("<< Not a valid answer. Closing Application... >>");
-                    Thread.Sleep(2000);
+                    Thread.Sleep(2300);
                     keepGoing = false;
                 }
             }
